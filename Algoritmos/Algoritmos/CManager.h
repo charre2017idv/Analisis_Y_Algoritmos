@@ -24,7 +24,9 @@ public:
 
 	/* Ordenamientos */
 	vector <int> BubbleSort(vector <int>);
+	vector <int> InsertionSort(vector <int>);
 
+	void benchMark(vector<int>);
 	void printVectori(vector<int>);
 	void SortTrails(vector<int>);
 };

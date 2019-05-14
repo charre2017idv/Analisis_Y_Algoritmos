@@ -71,6 +71,31 @@ vector<int> CManager::BubbleSort(vector<int> Vector)
 	return Vector;
 }
 
+vector<int> CManager::InsertionSort(vector<int> Vector)
+{// Complejidad N, Mejor caso Ordenado N, Peor caso Desordenado N^2, 
+	if (Vector.size() > 1) 
+	{
+		for (int i = 1; i < Vector.size(); ++i) {
+			int j = i - 1;
+			int temp = Vector[i];
+			while (j >= 0 && Vector[j] > temp) {
+				Vector[j + 1] = Vector[j];
+				--j;
+			}
+			Vector[j + 1] = temp;
+		}
+	}
+	return Vector;
+}
+
+void CManager::benchMark(vector<int> Vector)
+{
+	start = omp_get_wtime();
+	Vector;
+	end = omp_get_wtime();
+	cout << "Time: " << end - start << " seconds" << endl;
+}
+
 void CManager::printVectori(vector<int> vectori)
 {
 	for (size_t i = 0; i < vectori.size(); i++)
@@ -82,11 +107,16 @@ void CManager::printVectori(vector<int> vectori)
 
 void CManager::SortTrails(vector<int> VectorGen)
 {
-	start = omp_get_wtime();
-	BubbleSort(VectorGen);
-	end = omp_get_wtime();
-	cout << "Time: " << end - start << " seconds" << endl;
+	// Bubble Sort
+	cout << "Bubble Sort" << endl;
+	benchMark(BubbleSort(VectorGen));
 	printVectori(BubbleSort(VectorGen));
+	cout << endl;
+	// Insertion Sort
+	cout << "Insertion Sort" << endl;
+	benchMark(InsertionSort(VectorGen));
+	printVectori(InsertionSort(VectorGen));
+
 	cout << endl;
 }
 
