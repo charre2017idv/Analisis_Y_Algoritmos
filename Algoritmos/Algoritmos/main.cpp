@@ -16,10 +16,14 @@ int main()
 	CManager Manager;
 	//Manager.ExecuteAlgorithms();
 	vector<int> MyVector = { 5,3,2,1,4 };
-	int n = 100;
-	Manager.SortTrails(Manager.Ascendentes(n));
-	Manager.SortTrails(Manager.Descendentes(n));
-	Manager.SortTrails(Manager.Random(n));
+	int n = 20;
+	for (size_t i = 0; i < n; i++)
+	{
+		Manager.SortTrails(Manager.Ascendentes(n));
+
+	}
+	//Manager.SortTrails(Manager.Descendentes(n));
+	//Manager.SortTrails(Manager.Random(n));
 	cin.ignore();
 	cin.get();
 	return 0;

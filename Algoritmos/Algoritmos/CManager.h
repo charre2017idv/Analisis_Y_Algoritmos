@@ -1,6 +1,7 @@
 #pragma once
 #include "Header.h"
 #include "Cfibbonnaci.h"
+
 class CManager
 {
 public:
@@ -16,7 +17,9 @@ public:
 	vector<int> m_bubble;
 
 	double start, end, time;
-public:
+	ofstream ficheroSalida;
+	public:
+
 	void ExecuteAlgorithms();
 	vector <int> Ascendentes(int n);
 	vector <int> Descendentes(int n);

@@ -94,6 +94,10 @@ void CManager::benchMark(vector<int> Vector)
 	Vector;
 	end = omp_get_wtime();
 	cout << "Time: " << end - start << " seconds" << endl;
+
+	ficheroSalida.open("InsertBest.txt",ios::app);
+	ficheroSalida << end - start << endl;
+	ficheroSalida.close();
 }
 
 void CManager::printVectori(vector<int> vectori)
@@ -108,11 +112,12 @@ void CManager::printVectori(vector<int> vectori)
 void CManager::SortTrails(vector<int> VectorGen)
 {
 	// Bubble Sort
-	cout << "Bubble Sort" << endl;
-	benchMark(BubbleSort(VectorGen));
-	printVectori(BubbleSort(VectorGen));
-	cout << endl;
-	// Insertion Sort
+	//cout << "Bubble Sort" << endl;
+	//benchMark(BubbleSort(VectorGen));
+	//printVectori(BubbleSort(VectorGen));
+	//cout << endl;
+
+	//Insertion Sort
 	cout << "Insertion Sort" << endl;
 	benchMark(InsertionSort(VectorGen));
 	printVectori(InsertionSort(VectorGen));
