@@ -179,6 +179,80 @@ vector <int> CManager::quickSort(std::vector<int>& vec, int low, int high)
 	return vec;
 }
 
+vector<int> CManager::CountingSort(vector<int>& Vector)
+{
+	int max = *max_element(Vector.begin(), Vector.end());
+	int min = *min_element(Vector.begin(), Vector.end());
+	int range = max - min + 1;
+	vector<int> count(range), output(Vector.size());
+
+	// Store count of each character
+	for (int i = 0; i < Vector.size(); i++)
+		count[Vector[i] - min]++;
+	// Change count[i] so that count[i] now contains actual position of this character in output array  
+	for (int i = 1; i < count.size(); i++)
+		count[i] += count[i - 1];
+	// Gen the output array
+	for (int i = Vector.size() - 1; i >= 0; i--)
+	{
+		output[count[Vector[i] - min] - 1] = Vector[i];
+		count[Vector[i] - min]--;
+	}
+	// Copy the output array to vector, so that Vector now  contains sorted characters 
+	for (int i = 0; i < Vector.size(); i++)
+		Vector[i] = output[i];
+
+	return Vector;
+}
+
+vector<int> CManager::BucketSort(vector<int> &Vector)
+{
+	int i, j;
+	int count[20];
+	int n = Vector.size();
+	for (i = 0; i < n; i++)
+		count[i] = 0;
+
+	for (i = 0; i < n; i++)
+		(count[Vector[i]])++;
+
+	for (i = 0, j = 0; i < n; i++)
+		for (; count[i] > 0; (count[i])--)
+			Vector[j++] = i;
+
+	m_bucket = Vector;
+	return m_bucket;
+}
+
+vector<int> CManager::radixSort(vector<int>& Vector)
+{
+	m_vec.resize(10);
+	int temp, m = 0;
+
+	for (int i = 0; i < 7; i++)
+	{
+		for (int j = 0; j < Vector.size(); j++)
+		{
+			temp = (int)(Vector[j] / pow(10, i)) % 10;
+			m_vec[temp].push_back(Vector[j]);
+		}
+		for (int k = 0; k < 10; k++)
+		{
+			for (int l = 0; l < m_vec[k].size(); l++)
+			{
+				Vector[m] = m_vec[k][l];
+				m++;
+			}
+			m_vec[k].clear();
+		}
+
+		m = 0;
+	}
+
+
+	return Vector;
+}
+
 
 int CManager::linearSearch(std::vector<int> vec, int value)
 {
@@ -275,19 +349,34 @@ void CManager::SortTrails(vector<int> VectorGen)
 	//printVectori(MergeSort(VectorGen));
 
 	// Quick Sort
-	cout << "Quick Sort" << endl;
+	//cout << "Quick Sort" << endl;
 	//benchMark(quickSort(VectorGen, 0, VectorGen.size()));
 	//printVectori(quickSort(VectorGen,0,VectorGen.size()));
 
-	// Binary Search
-	cout << "Binary Search" << endl;
-	benchMarkSerch(binarySearch(VectorGen, 0, VectorGen.size(), 6));
-	printSearchi(binarySearch(VectorGen, 0, VectorGen.size(), 6));
+	// Counting Sort
+	//cout << "Counting Sort" << endl;
+	//benchMark(CountingSort(VectorGen));
+	//printVectori(CountingSort(VectorGen));
+
+	// Bucket Sort
+	//cout << "Bucket Sort" << endl;
+	//benchMark(BucketSort(VectorGen));
+	//printVectori(BucketSort(VectorGen));
+
+	// Radix Sort
+	cout << "Radix Sort" << endl;
+	benchMark(radixSort(VectorGen));
+	printVectori(radixSort(VectorGen));
 
 	// Binary Search
-	cout << "Linear Search" << endl;
-	benchMarkSerch(linearSearch(VectorGen, 6));
-	printSearchi(linearSearch(VectorGen  , 6));
+	//cout << "Binary Search" << endl;
+	//benchMarkSerch(binarySearch(VectorGen, 0, VectorGen.size(), 6));
+	//printSearchi(binarySearch(VectorGen, 0, VectorGen.size(), 6));
+
+	// Binary Search
+	//cout << "Linear Search" << endl;
+	//benchMarkSerch(linearSearch(VectorGen, 6));
+	//printSearchi(linearSearch(VectorGen  , 6));
 
 	cout << endl;
 }

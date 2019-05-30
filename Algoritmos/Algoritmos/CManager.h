@@ -17,6 +17,9 @@ public:
 	vector<int> m_bubble;
 	vector<int> m_merge;
 	vector<int> m_quick;
+	vector<int> m_bucket;
+	vector< vector<int> > m_vec;
+
 
 	double start, end, time;
 	ofstream ficheroSalida;
@@ -36,6 +39,10 @@ public:
 
 	int partition(std::vector<int> &vec, int low, int high);
 	vector<int> quickSort(std::vector<int>& vec, int low, int high);
+
+	vector<int> CountingSort(vector <int> &Vector);
+	vector<int> BucketSort(vector <int> &Vector);
+	vector<int> radixSort(vector <int> &Vector);
 	
 	int linearSearch(std::vector<int> vec, int value);
 	int binarySearch(std::vector<int> vec, int l, int r, int value);

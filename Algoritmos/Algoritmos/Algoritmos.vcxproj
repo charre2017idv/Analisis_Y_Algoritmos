@@ -116,11 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cfibbonnaci.cpp" />
+    <ClCompile Include="CHash.cpp" />
     <ClCompile Include="CManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cfibbonnaci.h" />
+    <ClInclude Include="CHash.h" />
     <ClInclude Include="CManager.h" />
     <ClInclude Include="Header.h" />
   </ItemGroup>
