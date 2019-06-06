@@ -179,7 +179,7 @@ vector <int> CManager::quickSort(std::vector<int>& vec, int low, int high)
 	return vec;
 }
 
-vector<int> CManager::CountingSort(vector<int>& Vector)
+vector <int> CManager::CountingSort(vector<int>& Vector)
 {
 	int max = *max_element(Vector.begin(), Vector.end());
 	int min = *min_element(Vector.begin(), Vector.end());
@@ -252,7 +252,6 @@ vector<int> CManager::radixSort(vector<int>& Vector)
 
 	return Vector;
 }
-
 
 int CManager::linearSearch(std::vector<int> vec, int value)
 {
@@ -337,12 +336,12 @@ void CManager::SortTrails(vector<int> VectorGen)
 	//benchMark(BubbleSort(VectorGen));
 	//printVectori(BubbleSort(VectorGen));
 	//cout << endl;
-	//
+	
 	////Insertion Sort
 	//cout << "Insertion Sort" << endl;
 	//benchMark(InsertionSort(VectorGen));
 	//printVectori(InsertionSort(VectorGen));
-	//
+	
 	//// Merge Sort
 	//cout << "Merge Sort" << endl;
 	//benchMark(MergeSort(VectorGen));
