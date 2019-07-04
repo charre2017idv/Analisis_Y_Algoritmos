@@ -338,9 +338,9 @@ void CManager::SortTrails(vector<int> VectorGen)
 	//cout << endl;
 	
 	////Insertion Sort
-	//cout << "Insertion Sort" << endl;
-	//benchMark(InsertionSort(VectorGen));
-	//printVectori(InsertionSort(VectorGen));
+	cout << "Insertion Sort" << endl;
+	benchMark(InsertionSort(VectorGen));
+	printVectori(InsertionSort(VectorGen));
 	
 	//// Merge Sort
 	//cout << "Merge Sort" << endl;
@@ -363,9 +363,9 @@ void CManager::SortTrails(vector<int> VectorGen)
 	//printVectori(BucketSort(VectorGen));
 
 	// Radix Sort
-	cout << "Radix Sort" << endl;
-	benchMark(radixSort(VectorGen));
-	printVectori(radixSort(VectorGen));
+	//cout << "Radix Sort" << endl;
+	//benchMark(radixSort(VectorGen));
+	//printVectori(radixSort(VectorGen));
 
 	// Binary Search
 	//cout << "Binary Search" << endl;

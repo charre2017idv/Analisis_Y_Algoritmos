@@ -20,8 +20,8 @@ int main()
 	//for (size_t i = 0; i < n; i++)
 	//{
 	//}
-	Manager.SortTrails(Manager.Ascendentes(n));
-	Manager.SortTrails(Manager.Descendentes(n));
+	//Manager.SortTrails(Manager.Ascendentes(n));
+	//Manager.SortTrails(Manager.Descendentes(n));
 	Manager.SortTrails(Manager.Random(n));
 
 	

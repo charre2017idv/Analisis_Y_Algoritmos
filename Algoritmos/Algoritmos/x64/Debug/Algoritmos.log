@@ -1,14 +1,2 @@
-﻿  CManager.cpp
-c:\users\personal\documents\github\analisis_y_algoritmos\algoritmos\algoritmos\cmanager.cpp(24): warning C4267: 'argument': conversion from 'size_t' to 'const _Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-c:\users\personal\documents\github\analisis_y_algoritmos\algoritmos\algoritmos\cmanager.cpp(36): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-c:\users\personal\documents\github\analisis_y_algoritmos\algoritmos\algoritmos\cmanager.cpp(196): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\personal\documents\github\analisis_y_algoritmos\algoritmos\algoritmos\cmanager.cpp(212): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  main.cpp
   Algoritmos.vcxproj -> C:\Users\personal\Documents\GitHub\Analisis_Y_Algoritmos\Algoritmos\x64\Debug\Algoritmos.exe
